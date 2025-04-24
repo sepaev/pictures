@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список файлов</title>
+</head>
+<body>
+    <h1>Список изображений</h1>
+    <ul>
+        <?php
+        $folder = "pictures/bigsun"; // Папка с изображениями
+        if (is_dir($folder)) {
+            $files = scandir($folder);
+            foreach ($files as $file) {
+                if ($file !== "." && $file !== "..") { // Исключаем служебные записи
+                    echo "<li><a href='$folder/$file' target='_blank'>$file</a></li>";
+                }
+            }
+        } else {
+            echo "<p>Папка не знайдена!</p>";
+        }
+        ?>
+    </ul>
+</body>
+</html>
