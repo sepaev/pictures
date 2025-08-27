@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Файловый проводник</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #000000, #ffffff);
+        }
+        h2 { margin-top: 20px; }
+        ul { list-style: none; padding: 0; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .item { padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
+        .folder-icon { margin-right: 8px; }
+        body { font-family: Arial, sans-serif; }
+        h1 {
+            font-size: 30px;
+            color: gold;
+        }
+        h1, h2 { text-align: center; } /* Добавлено выравнивание по центру */
+        ul { list-style: none; padding: 0; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .item { padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 5px; }
+        .folder-icon { margin-right: 8px; }
+        .folder_container,
+        .photo_container {
+            border: 1px solid #ccc;             /* светлая рамка */
+            border-radius: 10px;                /* закруглённые углы */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* мягкая тень */
+            padding: 15px 20px;                 /* паддинги: 15px сверху/снизу, 60px по бокам */
+            margin: 20px 60px;                     /* немного отступа сверху и снизу */
+            background-color: #fff;            /* белый фон (если надо) */
+}
+    </style>
+</head>
+<body>
+    <h1>Файловий провідник</h1>
+
+    <section class="folder_container">
+    <h2>Наявні теки</h2>
+    <ul><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>astor/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/astor/814-1832.jpg' target='_blank'>814-1832</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>bigsun/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1083_1.jpg' target='_blank'>1083_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1255g.jpg' target='_blank'>1255g</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1255s.jpg' target='_blank'>1255s</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1255w.jpg' target='_blank'>1255w</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1445.jpg' target='_blank'>1445</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1446.jpg' target='_blank'>1446</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1523.jpg' target='_blank'>1523</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1722_2.jpg' target='_blank'>1722_2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1827black.jpg' target='_blank'>1827black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1827white.jpg' target='_blank'>1827white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1846_1.jpg' target='_blank'>1846_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1848.jpg' target='_blank'>1848</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1904_1.jpg' target='_blank'>1904_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1905_1.jpg' target='_blank'>1905_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1909.jpg' target='_blank'>1909</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1920.jpg' target='_blank'>1920</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1923.jpg' target='_blank'>1923</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1926.jpg' target='_blank'>1926</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1932.jpg' target='_blank'>1932</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1932_1.jpg' target='_blank'>1932_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1936_black.jpg' target='_blank'>1936_black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1936_blue.jpg' target='_blank'>1936_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1936_green.jpg' target='_blank'>1936_green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1936_white.jpg' target='_blank'>1936_white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1947ava.jpg' target='_blank'>1947ava</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1947red.jpg' target='_blank'>1947red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1961.jpg' target='_blank'>1961</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1980per.jpg' target='_blank'>1980per</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/1988.jpg' target='_blank'>1988</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2020_1.jpg' target='_blank'>2020_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2027_3.jpg' target='_blank'>2027_3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2027_3br.jpg' target='_blank'>2027_3br</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2027_3_1.jpg' target='_blank'>2027_3_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2027_3_2.jpg' target='_blank'>2027_3_2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2027_5.jpg' target='_blank'>2027_5</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2027_5_1.jpg' target='_blank'>2027_5_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2040.jpg' target='_blank'>2040</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2063_1.jpg' target='_blank'>2063_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2065.jpg' target='_blank'>2065</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2065_4.jpg' target='_blank'>2065_4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2073_1.jpg' target='_blank'>2073_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2078black.jpg' target='_blank'>2078black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2078white.jpg' target='_blank'>2078white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2087_11.jpg' target='_blank'>2087_11</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2113_4blue.jpg' target='_blank'>2113_4blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2113_4green.jpg' target='_blank'>2113_4green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2125_1.jpg' target='_blank'>2125_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2147.jpg' target='_blank'>2147</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2148.jpg' target='_blank'>2148</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2154.jpg' target='_blank'>2154</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2163_4.jpg' target='_blank'>2163_4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2165_4.jpg' target='_blank'>2165_4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2166_4.jpg' target='_blank'>2166_4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2210blue.jpg' target='_blank'>2210blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2219.jpg' target='_blank'>2219</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2219ring.jpg' target='_blank'>2219ring</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2224.jpg' target='_blank'>2224</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2246.jpg' target='_blank'>2246</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2268blue.jpg' target='_blank'>2268blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/2268white.jpg' target='_blank'>2268white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/487.jpg' target='_blank'>487</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/711_3.jpg' target='_blank'>711_3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/722.jpg' target='_blank'>722</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/733.jpg' target='_blank'>733</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/733long.jpg' target='_blank'>733long</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/765black.jpg' target='_blank'>765black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/765green.jpg' target='_blank'>765green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/765red.jpg' target='_blank'>765red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/765white.jpg' target='_blank'>765white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/809.jpg' target='_blank'>809</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/812_1.jpg' target='_blank'>812_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/897_1.jpg' target='_blank'>897_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/905_1.jpg' target='_blank'>905_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/907_1.jpg' target='_blank'>907_1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/907_2.jpg' target='_blank'>907_2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bigsun/908_1.jpg' target='_blank'>908_1</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>bjew/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/bjew/18925.jpg' target='_blank'>18925</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/23078.jpg' target='_blank'>23078</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/23707.jpg' target='_blank'>23707</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/24416.jpg' target='_blank'>24416</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/2484.jpg' target='_blank'>2484</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/26977.jpg' target='_blank'>26977</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/35296.jpg' target='_blank'>35296</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/35527.jpg' target='_blank'>35527</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/36464.jpg' target='_blank'>36464</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/36588.jpg' target='_blank'>36588</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/36589.jpg' target='_blank'>36589</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/43549.jpg' target='_blank'>43549</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/45308.jpg' target='_blank'>45308</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/48298.jpg' target='_blank'>48298</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/49601.jpg' target='_blank'>49601</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/49743.jpg' target='_blank'>49743</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/52097.jpg' target='_blank'>52097</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/52340.jpg' target='_blank'>52340</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/53880.jpg' target='_blank'>53880</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54179.jpg' target='_blank'>54179</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54282.jpg' target='_blank'>54282</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54283.jpg' target='_blank'>54283</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54383.jpg' target='_blank'>54383</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54560.jpg' target='_blank'>54560</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54561.jpg' target='_blank'>54561</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/54669.jpg' target='_blank'>54669</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/55215.jpg' target='_blank'>55215</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/55244.jpg' target='_blank'>55244</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/55382.jpg' target='_blank'>55382</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/55383.jpg' target='_blank'>55383</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/55385.jpg' target='_blank'>55385</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/56530.jpg' target='_blank'>56530</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/56598.jpg' target='_blank'>56598</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/56622.jpg' target='_blank'>56622</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/56655.jpg' target='_blank'>56655</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/56966.jpg' target='_blank'>56966</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57091.jpg' target='_blank'>57091</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57208.jpg' target='_blank'>57208</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57459.jpg' target='_blank'>57459</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57461.jpg' target='_blank'>57461</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57466.jpg' target='_blank'>57466</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57764.jpg' target='_blank'>57764</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57874.jpg' target='_blank'>57874</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/57876.jpg' target='_blank'>57876</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bjew/Z-125-2.jpg' target='_blank'>Z-125-2</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>boxes/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/boxes/CF3072.jpg' target='_blank'>CF3072</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/boxes/FU79.jpg' target='_blank'>FU79</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>elis/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/elis/10031aqua.jpg' target='_blank'>10031aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10031sul.jpg' target='_blank'>10031sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10044.jpg' target='_blank'>10044</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10069red.jpg' target='_blank'>10069red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10080.jpg' target='_blank'>10080</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10106-4.jpg' target='_blank'>10106-4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10120.jpg' target='_blank'>10120</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1014.jpg' target='_blank'>1014</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10166.jpg' target='_blank'>10166</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10201e.jpg' target='_blank'>10201e</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10207.jpg' target='_blank'>10207</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10226.jpg' target='_blank'>10226</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10259b.jpg' target='_blank'>10259b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10259ua.jpg' target='_blank'>10259ua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10259w.jpg' target='_blank'>10259w</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10271.jpg' target='_blank'>10271</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10283.jpg' target='_blank'>10283</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10307.jpg' target='_blank'>10307</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/10311.jpg' target='_blank'>10311</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1081.jpg' target='_blank'>1081</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1230-blue.jpg' target='_blank'>1230-blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1247.jpg' target='_blank'>1247</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1253.jpg' target='_blank'>1253</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1340.jpg' target='_blank'>1340</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1384.jpg' target='_blank'>1384</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1476.jpg' target='_blank'>1476</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1477aqua.jpg' target='_blank'>1477aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1487blue.jpg' target='_blank'>1487blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/149.jpg' target='_blank'>149</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1595-1.jpg' target='_blank'>1595-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1595.jpg' target='_blank'>1595</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1622.jpg' target='_blank'>1622</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1628.jpg' target='_blank'>1628</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1664.jpg' target='_blank'>1664</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1756.jpg' target='_blank'>1756</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1756bk.jpg' target='_blank'>1756bk</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1785sul.jpg' target='_blank'>1785sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1812.jpg' target='_blank'>1812</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1815sul.jpg' target='_blank'>1815sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1827.jpg' target='_blank'>1827</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/18272.jpg' target='_blank'>18272</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1931.jpg' target='_blank'>1931</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1945.jpg' target='_blank'>1945</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/1970.jpg' target='_blank'>1970</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20009sul.jpg' target='_blank'>20009sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20031aqua.jpg' target='_blank'>20031aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20031sul.jpg' target='_blank'>20031sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20044.jpg' target='_blank'>20044</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20069red.jpg' target='_blank'>20069red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20076.jpg' target='_blank'>20076</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20106-4.jpg' target='_blank'>20106-4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20120.jpg' target='_blank'>20120</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20172.jpg' target='_blank'>20172</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20201e.jpg' target='_blank'>20201e</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20207-1.jpg' target='_blank'>20207-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20207.jpg' target='_blank'>20207</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20226.jpg' target='_blank'>20226</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20259b.jpg' target='_blank'>20259b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20263.jpg' target='_blank'>20263</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20269mistik.jpg' target='_blank'>20269mistik</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20271.jpg' target='_blank'>20271</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20273blue.jpg' target='_blank'>20273blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20274-1.jpg' target='_blank'>20274-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20283.jpg' target='_blank'>20283</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20297.jpg' target='_blank'>20297</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/20304.jpg' target='_blank'>20304</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2129-1.jpg' target='_blank'>2129-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2230.jpg' target='_blank'>2230</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2253.jpg' target='_blank'>2253</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2293.jpg' target='_blank'>2293</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2428-2grin.jpg' target='_blank'>2428-2grin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2428-2red.jpg' target='_blank'>2428-2red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2476.jpg' target='_blank'>2476</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2477aqua.jpg' target='_blank'>2477aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2487blue.jpg' target='_blank'>2487blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2564-1.jpg' target='_blank'>2564-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2566-2.jpg' target='_blank'>2566-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2600.jpg' target='_blank'>2600</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2622.jpg' target='_blank'>2622</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2639.jpg' target='_blank'>2639</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2664.jpg' target='_blank'>2664</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2756.jpg' target='_blank'>2756</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2769-1w.jpg' target='_blank'>2769-1w</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2769p.jpg' target='_blank'>2769p</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2785sul.jpg' target='_blank'>2785sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2812.jpg' target='_blank'>2812</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2815sul.jpg' target='_blank'>2815sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2827.jpg' target='_blank'>2827</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2837.jpg' target='_blank'>2837</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2840.jpg' target='_blank'>2840</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2845.jpg' target='_blank'>2845</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2846.jpg' target='_blank'>2846</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2880р.jpg' target='_blank'>2880р</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2923.jpg' target='_blank'>2923</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2929.jpg' target='_blank'>2929</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2945.jpg' target='_blank'>2945</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/2954.jpg' target='_blank'>2954</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/30009sul.jpg' target='_blank'>30009sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/30054.JPG' target='_blank'>30054</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/30058.jpg' target='_blank'>30058</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/30076.jpg' target='_blank'>30076</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/30283.jpg' target='_blank'>30283</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3045-1.jpg' target='_blank'>3045-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3227-1.jpg' target='_blank'>3227-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3477aqua.jpg' target='_blank'>3477aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3622.jpg' target='_blank'>3622</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3704W.jpg' target='_blank'>3704W</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3785sul.jpg' target='_blank'>3785sul</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3845.jpg' target='_blank'>3845</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/3945.jpg' target='_blank'>3945</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/4375.jpg' target='_blank'>4375</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/4482.jpg' target='_blank'>4482</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/50175.jpg' target='_blank'>50175</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/50235.jpg' target='_blank'>50235</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/50250.jpg' target='_blank'>50250</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/50287green.jpg' target='_blank'>50287green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/50287red.jpg' target='_blank'>50287red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/5096.jpg' target='_blank'>5096</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/5111.jpg' target='_blank'>5111</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/5314.jpg' target='_blank'>5314</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/5442.jpg' target='_blank'>5442</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/5497.jpg' target='_blank'>5497</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/5565.jpg' target='_blank'>5565</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6006-10b.jpg' target='_blank'>6006-10b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6006-20.jpg' target='_blank'>6006-20</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6006-20b.jpg' target='_blank'>6006-20b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-10.jpg' target='_blank'>6007-10</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-12.jpg' target='_blank'>6007-12</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-12b.jpg' target='_blank'>6007-12b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-16b.jpg' target='_blank'>6007-16b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-16dz.jpg' target='_blank'>6007-16dz</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-20.jpg' target='_blank'>6007-20</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6007-20b.jpg' target='_blank'>6007-20b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-18.jpg' target='_blank'>6010-18</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-18red.jpg' target='_blank'>6010-18red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-23aqua.jpg' target='_blank'>6010-23aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-23blue.jpg' target='_blank'>6010-23blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-23gray.jpg' target='_blank'>6010-23gray</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-30.jpg' target='_blank'>6010-30</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6010-30b.jpg' target='_blank'>6010-30b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/6018-15.jpg' target='_blank'>6018-15</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003-black.jpg' target='_blank'>7003-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003blue.jpg' target='_blank'>7003blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003br.jpg' target='_blank'>7003br</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003col.jpg' target='_blank'>7003col</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003m-black.jpg' target='_blank'>7003m-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003m.jpg' target='_blank'>7003m</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003ms-blue.jpg' target='_blank'>7003ms-blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003ms-cv.jpg' target='_blank'>7003ms-cv</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003ms-pink.jpg' target='_blank'>7003ms-pink</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003ms-velvet.jpg' target='_blank'>7003ms-velvet</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/7003ms.jpg' target='_blank'>7003ms</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/8101.jpg' target='_blank'>8101</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/br6002-26.jpg' target='_blank'>br6002-26</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/br6007-16b.jpg' target='_blank'>br6007-16b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/br6007-20b.jpg' target='_blank'>br6007-20b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/br6010-20red.jpg' target='_blank'>br6010-20red</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/elis/br6010-25red.jpg' target='_blank'>br6010-25red</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>lduz/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/lduz/1803198.jpg' target='_blank'>1803198</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>oriyana/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/oriyana/0180_10.jpg' target='_blank'>0180_10</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/oriyana/0312_10.jpg' target='_blank'>0312_10</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>pictures/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/pictures/002.jpg' target='_blank'>002</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/013-2.jpg' target='_blank'>013-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/013.jpg' target='_blank'>013</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/014-2.jpg' target='_blank'>014-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/014.jpg' target='_blank'>014</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/018.jpg' target='_blank'>018</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/019.jpg' target='_blank'>019</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/036.jpg' target='_blank'>036</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/078.jpg' target='_blank'>078</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/114.jpg' target='_blank'>114</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/150.jpg' target='_blank'>150</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/236.jpg' target='_blank'>236</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/267.jpg' target='_blank'>267</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/315.jpg' target='_blank'>315</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/325.jpg' target='_blank'>325</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/601.jpg' target='_blank'>601</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/602.jpg' target='_blank'>602</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/boris.jpg' target='_blank'>boris</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/dmitry.jpg' target='_blank'>dmitry</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/elisaveta.jpg' target='_blank'>elisaveta</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/georgy.jpg' target='_blank'>georgy</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/georgy2.jpg' target='_blank'>georgy2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/inna.jpg' target='_blank'>inna</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/iulija.jpg' target='_blank'>iulija</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/ivan.jpg' target='_blank'>ivan</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/leonid.jpg' target='_blank'>leonid</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/maria.jpg' target='_blank'>maria</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/matrona.jpg' target='_blank'>matrona</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/mitrofan.jpg' target='_blank'>mitrofan</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/pavel.jpg' target='_blank'>pavel</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/sofya.jpg' target='_blank'>sofya</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/pictures/valeriy.jpg' target='_blank'>valeriy</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>sapfir/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/sapfir/14-066.jpg' target='_blank'>14-066</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/14-234.jpg' target='_blank'>14-234</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/14-319.jpg' target='_blank'>14-319</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/14-352.jpg' target='_blank'>14-352</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/21-114.jpg' target='_blank'>21-114</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/22-273.jpg' target='_blank'>22-273</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/35-091.jpg' target='_blank'>35-091</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/35-091b.jpg' target='_blank'>35-091b</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/52-026.jpg' target='_blank'>52-026</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sapfir/71-011.jpg' target='_blank'>71-011</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>silvex/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_016.jpg' target='_blank'>p32_016</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_020.jpg' target='_blank'>p32_020</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_027.jpg' target='_blank'>p32_027</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_044.jpg' target='_blank'>p32_044</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_066.jpg' target='_blank'>p32_066</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_070.jpg' target='_blank'>p32_070</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/silvex/p32_072.jpg' target='_blank'>p32_072</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>Svitozar/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/024K-koral.jpg' target='_blank'>024K-koral</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/024S-koral.jpg' target='_blank'>024S-koral</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/066K_burshtin.jpg' target='_blank'>066K_burshtin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/066K_oniks.jpg' target='_blank'>066K_oniks</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/066P_burshtin.jpg' target='_blank'>066P_burshtin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/066S_burshtin.jpg' target='_blank'>066S_burshtin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/092B-amber.jpg' target='_blank'>092B-amber</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/092P-amber.jpg' target='_blank'>092P-amber</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/092S-aqua.jpg' target='_blank'>092S-aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1151.jpg' target='_blank'>1151</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1160K_white.jpg' target='_blank'>1160K_white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1536B.jpg' target='_blank'>1536B</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1551K.jpg' target='_blank'>1551K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1551S.jpg' target='_blank'>1551S</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1554K.jpg' target='_blank'>1554K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1554S.jpg' target='_blank'>1554S</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1571K.jpg' target='_blank'>1571K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1571S.jpg' target='_blank'>1571S</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1572K.jpg' target='_blank'>1572K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1583K.jpg' target='_blank'>1583K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/1590S.jpg' target='_blank'>1590S</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/219S.jpg' target='_blank'>219S</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/243K_blue.jpg' target='_blank'>243K_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/243P_blue.jpg' target='_blank'>243P_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/243S_blue.jpg' target='_blank'>243S_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/377P.jpg' target='_blank'>377P</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/403K-green.jpg' target='_blank'>403K-green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/403S-green.jpg' target='_blank'>403S-green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/430S-black.jpg' target='_blank'>430S-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/439K-green.jpg' target='_blank'>439K-green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/439S-green.jpg' target='_blank'>439S-green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/455S-black.jpg' target='_blank'>455S-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/526K_burshtin.jpg' target='_blank'>526K_burshtin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/526P_burshtin.jpg' target='_blank'>526P_burshtin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/526S_burshtin.jpg' target='_blank'>526S_burshtin</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/687K.jpg' target='_blank'>687K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/703-amethyst.jpg' target='_blank'>703-amethyst</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/703-granat.jpg' target='_blank'>703-granat</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/703-hrizolit.jpg' target='_blank'>703-hrizolit</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/703-topaz.jpg' target='_blank'>703-topaz</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/715S-black.jpg' target='_blank'>715S-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/733K-color.jpg' target='_blank'>733K-color</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/733S-color.jpg' target='_blank'>733S-color</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/776B-korona.jpg' target='_blank'>776B-korona</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/776B-zirochka.jpg' target='_blank'>776B-zirochka</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/847K_black.jpg' target='_blank'>847K_black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/847P_aqua.jpg' target='_blank'>847P_aqua</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/847P_blue.jpg' target='_blank'>847P_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/847P_green.jpg' target='_blank'>847P_green</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/847P_lawander.jpg' target='_blank'>847P_lawander</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/847P_white.jpg' target='_blank'>847P_white</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/850K_blue.jpg' target='_blank'>850K_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/850P_blue.jpg' target='_blank'>850P_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/850S_blue.jpg' target='_blank'>850S_blue</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/889K-black.jpg' target='_blank'>889K-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/889S-black.jpg' target='_blank'>889S-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/945S-black.jpg' target='_blank'>945S-black</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/988B.jpg' target='_blank'>988B</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/BC_048rK.jpg' target='_blank'>BC_048rK</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/GB150B.jpg' target='_blank'>GB150B</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/GB_90R.jpg' target='_blank'>GB_90R</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/GR5259K.jpg' target='_blank'>GR5259K</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/PP-0249.jpg' target='_blank'>PP-0249</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/PPS_0148P.jpg' target='_blank'>PPS_0148P</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/PPS_1776-13P.jpg' target='_blank'>PPS_1776-13P</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/PPS_2126P.jpg' target='_blank'>PPS_2126P</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/PPS_2127.jpg' target='_blank'>PPS_2127</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/PPS_2132.jpg' target='_blank'>PPS_2132</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Svitozar/TP0265-SQ4.jpg' target='_blank'>TP0265-SQ4</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>top-silver/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530001-2.jpg' target='_blank'>530001-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530001-4.jpg' target='_blank'>530001-4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530002-3.jpg' target='_blank'>530002-3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530007-2.jpg' target='_blank'>530007-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530007-4.jpg' target='_blank'>530007-4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530008-2.jpg' target='_blank'>530008-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530010-5.jpg' target='_blank'>530010-5</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530011-4.jpg' target='_blank'>530011-4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530011-7.jpg' target='_blank'>530011-7</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530013-1.jpg' target='_blank'>530013-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530016-1.jpg' target='_blank'>530016-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530018-3.jpg' target='_blank'>530018-3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530022-1.jpg' target='_blank'>530022-1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530023-2.jpg' target='_blank'>530023-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530030-3.jpg' target='_blank'>530030-3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530031-5.jpg' target='_blank'>530031-5</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530039-5.jpg' target='_blank'>530039-5</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530049-3.jpg' target='_blank'>530049-3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530049-4.jpg' target='_blank'>530049-4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530050-3.jpg' target='_blank'>530050-3</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530051-2.jpg' target='_blank'>530051-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/top-silver/530056-2.jpg' target='_blank'>530056-2</a></div>
+</div></details></li><li> <details><summary class='folder-icon'><img src='https://sepaev.github.io/pictures/folder.png' alt='Папка' width='20' height='20'>xuz/</summary><div class='grid'><div class='item'><a href='https://sepaev.github.io/pictures/xuz/01903111.jpg' target='_blank'>01903111</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/xuz/079096.jpg' target='_blank'>079096</a></div>
+</div></details></li>    </ul>
+    </section>
+
+    <h2>Фотографії</h2>
+    <section class="photo_container">
+    <div class="grid"><div class='item'><a href='https://sepaev.github.io/pictures/00009-04.jpg' target='_blank'>00009-04</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/00049-14.jpg' target='_blank'>00049-14</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/00363-10.jpg' target='_blank'>00363-10</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/01260-32.jpg' target='_blank'>01260-32</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/112266.jpg' target='_blank'>112266</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/112267.jpg' target='_blank'>112267</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/112429.jpg' target='_blank'>112429</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/112430.jpg' target='_blank'>112430</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/112471.jpg' target='_blank'>112471</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/16168.jpg' target='_blank'>16168</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/18-0.jpg' target='_blank'>18-0</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/20x4.jpg' target='_blank'>20x4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/24249.jpg' target='_blank'>24249</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/24544.jpg' target='_blank'>24544</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/26471.jpg' target='_blank'>26471</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/26808.JPG' target='_blank'>26808</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/27911.jpg' target='_blank'>27911</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/30014.jpg' target='_blank'>30014</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/3040.jpg' target='_blank'>3040</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/349.jpg' target='_blank'>349</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/3B-18.jpg' target='_blank'>3B-18</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/407.jpg' target='_blank'>407</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/4x4.jpg' target='_blank'>4x4</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/5x5.jpg' target='_blank'>5x5</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/98-13.jpg' target='_blank'>98-13</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/BB-GMT.jpg' target='_blank'>BB-GMT</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bbr-j.jpg' target='_blank'>bbr-j</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/bk-110.jpg' target='_blank'>bk-110</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/HB-288S.jpg' target='_blank'>HB-288S</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/kulki.JPG' target='_blank'>kulki</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/L1350.jpg' target='_blank'>L1350</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/ladybug.jpg' target='_blank'>ladybug</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/M-VNESH.JPG' target='_blank'>M-VNESH</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/M-VNUT.JPG' target='_blank'>M-VNUT</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/M1.jpg' target='_blank'>M1</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/m5.jpg' target='_blank'>m5</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/M8.jpg' target='_blank'>M8</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/magnet.jpg' target='_blank'>magnet</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/MK-49-2.jpg' target='_blank'>MK-49-2</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/notAvailable.jpg' target='_blank'>notAvailable</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/sony.jpg' target='_blank'>sony</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/strawberry.jpg' target='_blank'>strawberry</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/XT-3643.jpg' target='_blank'>XT-3643</a></div>
+<div class='item'><a href='https://sepaev.github.io/pictures/Н001-7.jpg' target='_blank'>Н001-7</a></div>
+    </div>
+    </section>
+</body>
+</html>
