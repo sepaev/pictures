@@ -209,7 +209,7 @@ Get-ChildItem -Directory | ForEach-Object {
         $html += "<details class='group'><summary>ֻ³עונט - [$($letters.Count) רע.]</summary><div class='grid'>"
         foreach ($file in $letters) {
             $name = $file.BaseName
-          $html += "<div class='item'><img src='$baseUrl/$folder/$($file.Name)' class='thumb'><br><span>$name</span><button onclick='copyToClipboard(`"$baseUrl/$folder/$($file.Name)`")' class='copy-btn'><img src='copy.png' width='16' height='16' alt='Copy'></button></div>"
+          $html += "<div class='item'><a href='$baseUrl/$folder/$($file.Name)' target='_blank'><img src='$baseUrl/$folder/$($file.Name)' class='thumb'><br><span>$name</a></span><button onclick='copyToClipboard(`"$baseUrl/$folder/$($file.Name)`")' class='copy-btn'><img src='copy.png' width='16' height='16' alt='Copy'></button></div>"
 
         }
         $html += "</div></details>"
@@ -226,7 +226,7 @@ if ($rootFiles.Count -gt 0) {
     $html += "<h2>װמעמדנאפ³¿</h2><section class='photo_container'><div class='grid'>"
     foreach ($file in $rootFiles) {
         $name = $file.BaseName
-       $html += "<div class='item'><img src='$baseUrl/$($file.Name)' class='thumb'><br><span>$name</span><button onclick='copyToClipboard(`"$baseUrl/$($file.Name)`")' class='copy-btn'><img src='copy.png' width='16' height='16' alt='Copy'></button></div>"
+       $html += "<div class='item'><a href='$baseUrl/$($file.Name)' target='_blank'><img src='$baseUrl/$($file.Name)' class='thumb'><br><span>$name</a></span><button onclick='copyToClipboard(`"$baseUrl/$($file.Name)`")' class='copy-btn'><img src='copy.png' width='16' height='16' alt='Copy'></button></div>"
     }
     $html += "</div></section>"
 }
