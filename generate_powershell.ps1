@@ -6,7 +6,7 @@ $html = @"
 <html lang='uk'>
 <head>
     <meta charset='UTF-8'>
-    <title>Р¤Р°Р№Р»РѕРІРёР№ РїСЂРѕРІС–РґРЅРёРє</title>
+    <title>Файловий провідник</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         body { font-family: Arial, sans-serif; background: linear-gradient(180deg, #000000, #ffffff); }
@@ -24,40 +24,39 @@ $html = @"
     </style>
 </head>
 <body>
-<h1>Р¤Р°Р№Р»РѕРІРёР№ РїСЂРѕРІС–РґРЅРёРє</h1>
+<h1>Файловий провідник</h1>
 <section class="folder_container">
-<h2>РќР°СЏРІРЅС– С‚РµРєРё</h2>
+<h2>Наявні теки</h2>
 <ul>
 "@
 
-# РћР±СЂРѕР±РєР° С‚РµРє
+# Обробка тек
 Get-ChildItem -Directory | ForEach-Object {
     $folder = $_.Name
-    $html += "<li><details><summary class='folder-icon'><img src='$baseUrl/folder.png' alt='РџР°РїРєР°' width='20' height='20'>$folder/</summary>"
+    $html += "<li><details><summary class='folder-icon'><img src='$baseUrl/folder.png' width='20' height='20'>$folder/</summary>"
 
-    # РћС‚СЂРёРјР°С‚Рё РІСЃС– .jpg С„Р°Р№Р»Рё РІ С‚РµС†С–
-    $files = Get-ChildItem "$folder" -Filter *.jpg | Select-Object -ExpandProperty Name
+    $files = Get-ChildItem "$folder" -Filter *.jpg
 
-    # Р“СЂСѓРїСѓРІР°РЅРЅСЏ РїРѕ РїРµСЂС€РѕРјСѓ СЃРёРјРІРѕР»Сѓ
-    for ($i = 0; $i -le 9; $i++) {
-        $group = $files | Where-Object { $_ -match "^$i" }
+    # Цифрові групи 0–9
+    foreach ($digit in 0..9) {
+        $group = $files | Where-Object { $_.Name -like "$digit*" }
         if ($group.Count -gt 0) {
-            $html += "<details><summary>$i</summary><div class='grid'>"
+            $html += "<details><summary>$digit</summary><div class='grid'>"
             foreach ($file in $group) {
-                $name = [System.IO.Path]::GetFileNameWithoutExtension($file)
-                $html += "<div class='item'><a href='$baseUrl/$folder/$file' target='_blank'>$name</a></div>"
+                $name = $file.BaseName
+                $html += "<div class='item'><a href='$baseUrl/$folder/$($file.Name)' target='_blank'>$name</a></div>"
             }
             $html += "</div></details>"
         }
     }
 
-    # Р›С–С‚РµСЂРЅС– С„Р°Р№Р»Рё
-    $letters = $files | Where-Object { $_ -match "^[A-Za-zРђ-РЇР°-СЏР†С–Р‡С—Р„С”]" }
+    # Літерні файли
+    $letters = $files | Where-Object { $_.Name -match "^[A-Za-zА-Яа-яІіЇїЄє]" }
     if ($letters.Count -gt 0) {
-        $html += "<details><summary>Р›С–С‚РµСЂРё</summary><div class='grid'>"
+        $html += "<details><summary>Літери</summary><div class='grid'>"
         foreach ($file in $letters) {
-            $name = [System.IO.Path]::GetFileNameWithoutExtension($file)
-            $html += "<div class='item'><a href='$baseUrl/$folder/$file' target='_blank'>$name</a></div>"
+            $name = $file.BaseName
+            $html += "<div class='item'><a href='$baseUrl/$folder/$($file.Name)' target='_blank'>$name</a></div>"
         }
         $html += "</div></details>"
     }
@@ -67,18 +66,21 @@ Get-ChildItem -Directory | ForEach-Object {
 
 $html += "</ul></section>"
 
-# Р¤РѕС‚Рѕ Р±РµР· С‚РµРє
-$html += "<h2>Р¤РѕС‚РѕРіСЂР°С„С–С—</h2><section class='photo_container'><div class='grid'>"
-Get-ChildItem -File -Filter *.jpg | ForEach-Object {
-    $file = $_.Name
-    $name = [System.IO.Path]::GetFileNameWithoutExtension($file)
-    $html += "<div class='item'><a href='$baseUrl/$file' target='_blank'>$name</a></div>"
+# Фото без тек
+$rootFiles = Get-ChildItem -File -Filter *.jpg
+if ($rootFiles.Count -gt 0) {
+    $html += "<h2>Фотографії</h2><section class='photo_container'><div class='grid'>"
+    foreach ($file in $rootFiles) {
+        $name = $file.BaseName
+        $html += "<div class='item'><a href='$baseUrl/$($file.Name)' target='_blank'>$name</a></div>"
+    }
+    $html += "</div></section>"
 }
-$html += "</div></section></body></html>"
 
-# Р—Р°РїРёСЃ Сѓ С„Р°Р№Р»
+$html += "</body></html>"
+
+# Запис у файл
 $html | Out-File -Encoding UTF8 $output
 
-# Р’С–РґРєСЂРёС‚С‚СЏ HTML
+# Відкриття HTML
 Start-Process $output
-pause

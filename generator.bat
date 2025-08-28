@@ -7,10 +7,10 @@ set "output=index.html"
 
 :: Початок HTML
 echo ^<!DOCTYPE html^> > %output%
-echo ^<html lang='ru'^> >> %output%
+echo ^<html lang='uk'^> >> %output%
 echo ^<head^> >> %output%
 echo     ^<meta charset='UTF-8'^> >> %output%
-echo     ^<title^>Файловый проводник^</title^> >> %output%
+echo     ^<title^>Файловий провідник^</title^> >> %output%
 echo     ^<link rel="icon" type="image/png" href="favicon.png"^> >> %output%
 echo     ^<style^> >> %output%
 echo         body { font-family: Arial, sans-serif; background: linear-gradient(180deg, #000000, #ffffff); } >> %output%
@@ -32,35 +32,92 @@ echo ^<h2^>Наявні теки^</h2^> >> %output%
 echo ^<ul^> >> %output%
 
 for /d %%D in (*) do (
-    set "folder=%%D"
-    echo ^<li^> ^<details^>^<summary class='folder-icon'^>^<img src='%base_url%/folder.png' alt='Папка' width='20' height='20'^>!folder!/^</summary^>^<div class='grid'^> >> %output%
-    for %%F in ("%%D\*.jpg") do (
-        set "file=%%~nxF"
-        echo ^<div class='item'^>^<a href='%base_url%/!folder!/!file!' target='_blank'^>!file:~0,-4!^</a^>^</div^> >> %output%
+    echo ^<li^> >> %output%
+    echo ^<details^> >> %output%
+    echo ^<summary class='folder-icon'^>^<img src='%base_url%/folder.png' alt='Папка' width='20' height='20'^>%%D/^</summary^> >> %output%
+
+    :: 0–9: окремі спойлери
+    for %%N in (0 1 2 3 4 5 6 7 8 9) do (
+        set "hasFiles="
+        for %%F in ("%%D\*.jpg") do (
+            set "name=%%~nxF"
+            call set "first=%%name:~0,1%%"
+            if "!first!"=="%%N" (
+                set "hasFiles=1"
+            )
+        )
+        if defined hasFiles (
+            echo ^<details^> >> %output%
+            echo ^<summary^>%%N^</summary^> >> %output%
+            echo ^<div class='grid'^> >> %output%
+            for %%F in ("%%D\*.jpg") do (
+                set "name=%%~nxF"
+                call set "first=%%name:~0,1%%"
+                if "!first!"=="%%N" (
+                    echo ^<div class='item'^>^<a href='%base_url%/%%D/%%~nF.jpg' target='_blank'^>%%~nF^</a^>^</div^> >> %output%
+                )
+            )
+            echo ^</div^> >> %output%
+            echo ^</details^> >> %output%
+        )
     )
-    echo ^</div^>^</details^>^</li^> >> %output%
+
+    :: Літерні файли
+    set "hasLetters="
+    for %%F in ("%%D\*.jpg") do (
+        set "name=%%~nxF"
+        call set "first=%%name:~0,1%%"
+        echo %%first%% | findstr /r "^[A-Za-zА-Яа-яІіЇїЄє]" >nul
+        if not errorlevel 1 (
+            set "hasLetters=1"
+        )
+    )
+    if defined hasLetters (
+        echo ^<details^> >> %output%
+        echo ^<summary^>Літери^</summary^> >> %output%
+        echo ^<div class='grid'^> >> %output%
+        for %%F in ("%%D\*.jpg") do (
+            set "name=%%~nxF"
+            call set "first=%%name:~0,1%%"
+            echo %%first%% | findstr /r "^[A-Za-zА-Яа-яІіЇїЄє]" >nul
+            if not errorlevel 1 (
+                echo ^<div class='item'^>^<a href='%base_url%/%%D/%%~nF.jpg' target='_blank'^>%%~nF^</a^>^</div^> >> %output%
+            )
+        )
+        echo ^</div^> >> %output%
+        echo ^</details^> >> %output%
+    )
+
+    echo ^</details^> >> %output%
+    echo ^</li^> >> %output%
 )
 
 echo ^</ul^> >> %output%
 echo ^</section^> >> %output%
 
 :: Фото без тек
-echo ^<h2^>Фотографії^</h2^> >> %output%
-echo ^<section class="photo_container"^> >> %output%
-echo ^<div class="grid"^> >> %output%
-
+set "hasRoot="
 for %%F in (*.jpg) do (
     set "file=%%~nxF"
-    echo ^<div class='item'^>^<a href='%base_url%/!file!' target='_blank'^>!file:~0,-4!^</a^>^</div^> >> %output%
+    if defined file (
+        set "hasRoot=1"
+    )
+)
+if defined hasRoot (
+    echo ^<h2^>Фотографії^</h2^> >> %output%
+    echo ^<section class="photo_container"^> >> %output%
+    echo ^<div class="grid"^> >> %output%
+    for %%F in (*.jpg) do (
+        set "file=%%~nxF"
+        echo ^<div class='item'^>^<a href='%base_url%/%%F' target='_blank'^>%%~nF^</a^>^</div^> >> %output%
+    )
+    echo ^</div^> >> %output%
+    echo ^</section^> >> %output%
 )
 
-echo ^</div^> >> %output%
-echo ^</section^> >> %output%
 echo ^</body^> >> %output%
 echo ^</html^> >> %output%
 
 :: Відкриття HTML-файлу
 start "" "%output%"
-
-echo Готово! Файл index.html створено і відкрито.
 exit
