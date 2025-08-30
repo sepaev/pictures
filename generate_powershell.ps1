@@ -231,7 +231,24 @@ if ($rootFiles.Count -gt 0) {
     $html += "</div></section>"
 }
 
-$html += "</body></html>"
+$html += @"
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.protocol === 'file:') {
+        const localBase = 'file:///G:/GIT/';
+
+        // Міняємо тільки адресу картинки, що відображається
+        document.querySelectorAll('img.thumb').forEach(img => {
+            img.src = img.src.replace('https://sepaev.github.io/', localBase);
+        });
+
+        // Посилання та кнопки копіювання не чіпаємо
+    }
+});
+</script>
+
+</body></html>
+"@
 
 # Запис у файл
 $html | Out-File -Encoding UTF8 $output
