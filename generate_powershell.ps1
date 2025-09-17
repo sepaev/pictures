@@ -235,7 +235,7 @@ $html += @"
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.protocol === 'file:') {
-        const localBase = 'file:///G:/GIT/';
+        const localBase = 'file:///H:/GIT/';
 
         // Міняємо тільки адресу картинки, що відображається
         document.querySelectorAll('img.thumb').forEach(img => {
