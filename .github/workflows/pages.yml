@@ -1,0 +1,11 @@
+name Dummy Pages Workflow
+on
+  push
+    branches
+      - main
+jobs
+  skip
+    runs-on ubuntu-latest
+    steps
+      - name Do nothing
+        run echo Skipping deployment
