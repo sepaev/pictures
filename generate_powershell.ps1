@@ -1,5 +1,6 @@
 $baseUrl = "https://sepaev.github.io/pictures"
-$output = "index.html"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path 
+$output = Join-Path $scriptDir "index.html"
 
 $html = @"
 <!DOCTYPE html>
@@ -180,7 +181,7 @@ function showToast(message) {
 "@
 
 # Обробка тек
-Get-ChildItem -Directory | ForEach-Object {
+Get-ChildItem -Directory -Exclude ".github" | ForEach-Object {
     $folder = $_.Name
     # Назва папки
     $html += "<li><details class='folder'><summary class='folder-icon'><img src='$baseUrl/folder.png' width='20' height='20'>$folder/</summary>"
